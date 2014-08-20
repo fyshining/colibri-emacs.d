@@ -28,6 +28,8 @@
 ;; along with GNU Emacs; see the file COPYING.  If not, write to the
 ;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 ;; Boston, MA 02110-1301, USA.
+;;
+;;; end!
 
 
 ;; 显示启动信息
@@ -45,34 +47,26 @@
    (if (equal system-type 'window-nt)
        "USERNAME"
      "USER")))
-(message "%s" current-user)
 
 ;; 总是加载最新的 byte code
 (setq load-prefer-newer t)
 
-;; 设置 Colibri .emacs.d 工作目录
+
 (defvar colibri-dir (file-name-directory user-emacs-directory)
   "Colibri .emacs.d 主目录。")
-
-;; Colibri .emacs.d's core目录，用来存放内核
 (defvar colibri-core-dir (expand-file-name "core" colibri-dir)
   "该目录存放着 Colibri .emacs.d 内核文件。")
-
-;; Colibri .emacs.d's modules 目录，用来存放模块文件
 (defvar colibri-modules-dir (expand-file-name "modules" colibri-dir)
   "该目录存放所有 Colibri .emacs.d 内置的模块。")
-
-;; Colibri .emacs.d's modules 加载文件，定义了将要被加载的所有模块
-(defvar colibri-modules-file (expand-file-name "module-loaded.el" colibri-modules-dir)
-  "该文件存放着 Colibri .emacs.d 将要加载的所有模块。")
-
-;; Colibri .emacs.d's utils 目录，用来存放工具函数
 (defvar colibri-utils-dir (expand-file-name "utils" colibri-dir)
   "该目录存放着 colibri .emacs.d 所用到的所有工具函数。")
-
-;; Colibri .emacs.d's 保存目录
+(defvar colibri-personal-dir (expand-file-name "locals" colibri-dir)
+  "该目录存放着用户自定义的配置信息。")
 (defvar colibri-savefile-dir (expand-file-name ".savefile" colibri-dir)
   "该目录存放所有自动生成的文件，包括保存或历史文件。")
+
+(defvar colibri-modules-file (expand-file-name "module-loaded.el" colibri-modules-dir)
+  "该文件存放着 Colibri .emacs.d 将要加载的所有模块。")
 
 ;; 检测目录是否存在，若不存在该目录，则创建该目录
 (unless (file-exists-p colibri-savefile-dir)
@@ -89,6 +83,8 @@
 
 (message "正在加载 Colibri .emacs.d 内核 ...")
 
+;; core stuff
+(require 'core-ui)
 
 (message "正在加载 Colibri .emacs.d 模块 ...")
 
@@ -96,6 +92,10 @@
 (when (file-exists-p colibri-modules-file)
   (load colibri-modules-file))
 
+;; 加载用户自定义的配置文件，存放在locals目录下
+(when (file-exists-p colibri-personal-dir)
+  (message "正在加载 %s 目录下的用户配置信息 ..." colibri-personal-dir)
+  (mapc 'load (directory-files colibri-personal-dir 't "^[^#].*el$")))
 
 ;; 添加 hook 函数，计算并显示开机时间
 (add-hook 'after-init-hook
