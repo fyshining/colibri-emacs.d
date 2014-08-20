@@ -41,7 +41,7 @@
             (append
              (loop for dir in (directory-files parent-dir)
                    unless (string-match "^\\." dir)
-                   collecting (expand-file-name dir))
+		   collecting (expand-file-name dir))
              load-path)))))
 
 (core-add-subdirs-to-load-path
@@ -71,7 +71,6 @@
 	"判断是否能够从~/.emacs.d/site-lisp/name/目录中加载name库文件"
 	(let ((f (locate-library (symbol-name name))))
 		(and f (string-prefix-p (file-name-as-directory (site-lisp-dir-for (name)) f)))))
-
 
 ;; Download these upstream libs
 ;; Emacs 23 以上版本已经将package.el集成到内部
