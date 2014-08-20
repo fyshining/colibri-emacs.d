@@ -85,6 +85,8 @@
 
 ;; core stuff
 (require 'core-ui)
+(require 'core-site-lisp)
+(require 'core-elpa)
 
 (message "正在加载 Colibri .emacs.d 模块 ...")
 
