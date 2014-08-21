@@ -31,4 +31,11 @@
 
 (message "module-loaded test!")
 
+;; 加载 module-cscope
+(require 'module-cscope)
+
+;; 加载 module-ido
+(require 'module-ido)
+
 (provide 'module-loaded)
+;; module-loaded end!
