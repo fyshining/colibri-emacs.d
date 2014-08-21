@@ -59,6 +59,7 @@ Emacs 成为一款简单易用的编辑器。不仅能够编写代码、文章�
 
 ####文件树
 
+```c
 colibri-emacs.d   
 ├── COPYING   
 ├── core   
@@ -97,6 +98,7 @@ colibri-emacs.d
 │       └── unicad.el  
 └── utils    
     └── util-timl   
+```
 
 >注： 
 >colibri-emacs.d是项目的根目录，为方便描述，在不明确说明的话使用 . 表示根目
