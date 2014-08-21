@@ -59,44 +59,44 @@ Emacs 成为一款简单易用的编辑器。不仅能够编写代码、文章�
 
 ####文件树
 
-colibri-emacs.d
-├── COPYING
-├── core
-│   ├── core-elpa.el
-│   ├── core-site-lisp.el
-│   └── core-ui.el
-├── docs
-│   └── TODO
-├── elpa
-│   ├── archives
-│   │   ├── gnu
-│   │   │   └── archive-contents
-│   │   ├── melpa
-│   │   │   └── archive-contents
-│   │   ├── melpa-stable
-│   │   │   └── archive-contents
-│   │   └── org
-│   │       └── archive-contents
-│   └── fullframe-20140619.305
-│       ├── fullframe.elll
-│       ├── fullframe.elc
-│       ├── fullframe-autoloads.el
-│       ├── fullframe-autoloads.el~
-│       ├── fullframe-pkg.el
-│       └── fullframe-pkg.elc
-├── eshell
-├── init.el
-├── locals
-│   └── local-demo.el
-├── modules
-│   └── module-loaded.el
-├── README.md
-├── README.txt
-├── site-lisp
-│   └── unicad
-│       └── unicad.el
-└── utils
-    └── util-timl
+colibri-emacs.d   
+├── COPYING   
+├── core   
+│   ├── core-elpa.el   
+│   ├── core-site-lisp.el   
+│   └── core-ui.el   
+├── docs   
+│   └── TODO  
+├── elpa  
+│   ├── archives   
+│   │   ├── gnu   
+│   │   │   └── archive-contents   
+│   │   ├── melpa   
+│   │   │   └── archive-contents  
+│   │   ├── melpa-stable  
+│   │   │   └── archive-contents  
+│   │   └── org  
+│   │       └── archive-contents  
+│   └── fullframe-20140619.305  
+│       ├── fullframe.elll  
+│       ├── fullframe.elc  
+│       ├── fullframe-autoloads.el  
+│       ├── fullframe-autoloads.el~  
+│       ├── fullframe-pkg.el  
+│       └── fullframe-pkg.elc  
+├── eshell   
+├── init.el    
+├── locals  
+│   └── local-demo.el  
+├── modules   
+│   └── module-loaded.el   
+├── README.md   
+├── README.txt  
+├── site-lisp   
+│   └── unicad   
+│       └── unicad.el  
+└── utils    
+    └── util-timl   
 
 >注： 
 >colibri-emacs.d是项目的根目录，为方便描述，在不明确说明的话使用 . 表示根目
@@ -112,14 +112,16 @@ Colibri-emacs.d 相关的文件包括代码、文档、第三方库等全部存�
 
 ####含义
 
-文件含义如下表所示：
+文件含义如下表所示：  
+
 | 文件名    | 含义                                                                    | 
 | --------- | ----------------------------------------------------------------------- |  
 | COPYING   | 项目遵循的 GPLv2协议                                                    |
 | init.el   | 项目的启动文件，其将会检查系统版本、加载内核、加载模块，最终启动Emacs。 |
 | README.md | 项目说明书                                                              |
 
-文件夹含义如下表所示：
+文件夹含义如下表所示：   
+
 | 文件夹名  | 含义                            |
 | --------- | ------------------------------- |
 | core      | 微内核代码文件夹                |
