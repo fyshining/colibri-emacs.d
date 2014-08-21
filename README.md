@@ -34,7 +34,7 @@ colibri-emacs.d
 
 
 
-###目标
+###序
 
 Colibri-emacs.d 是基于 GPLv2 协议的开源软件，并且是由 Colibri Team 开发并
 维护。Colibri团队一直坚持KISS (Keep it simple and stupid)原则，换句话来说
