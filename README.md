@@ -59,7 +59,7 @@ Emacs 成为一款简单易用的编辑器。不仅能够编写代码、文章�
 
 ####文件树
 
-```c
+```lisp
 colibri-emacs.d   
 ├── COPYING   
 ├── core   
