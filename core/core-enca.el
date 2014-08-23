@@ -1,7 +1,7 @@
 ;;; Personal: 
 ;;  
-;; File Name: module-loaded.el
-;; Created Time: 2014/8/20
+;; File Name: core-enca.el
+;; Created Time: 2014/8/21
 ;; Edited By: ShiNing
 ;;
 ;; Copyright (c) 2014 ShiNing, Colibri Team, All Rights Reserved.
@@ -9,7 +9,7 @@
 ;; |-------+---------+-----------+----------+------|
 ;; |  版本 | 作者    | 时间      | 修订说明 | 备注 |
 ;; |-------+---------+-----------+----------+------|
-;; | 0.0.1 | ShiNing | 2014/8/20 | 创建文件 |      |
+;; | 0.0.1 | ShiNing | 2014/8/21 | 创建文件 |      |
 ;; |-------+---------+-----------+----------+------|
 ;;
 ;;; License:
@@ -28,14 +28,11 @@
 ;; along with GNU Emacs; see the file COPYING.  If not, write to the
 ;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 ;; Boston, MA 02110-1301, USA.
+;;
+;;; end!
 
-(message "module-loaded test!")
+(require 'unicad)
+(message "core-enca!")
 
-;; 加载 module-cscope
-(require 'module-cscope)
-
-;; 加载 module-ido
-(require 'module-ido)
-
-(provide 'module-loaded)
-;; module-loaded end!
+(provide 'core-enca)
+;;; end core-enca!

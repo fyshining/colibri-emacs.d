@@ -1,7 +1,7 @@
 ;;; Personal: 
 ;;  
-;; File Name: module-loaded.el
-;; Created Time: 2014/8/20
+;; File Name: module-cscope.el
+;; Created Time: 2014/8/21
 ;; Edited By: ShiNing
 ;;
 ;; Copyright (c) 2014 ShiNing, Colibri Team, All Rights Reserved.
@@ -9,7 +9,7 @@
 ;; |-------+---------+-----------+----------+------|
 ;; |  版本 | 作者    | 时间      | 修订说明 | 备注 |
 ;; |-------+---------+-----------+----------+------|
-;; | 0.0.1 | ShiNing | 2014/8/20 | 创建文件 |      |
+;; | 0.0.1 | ShiNing | 2014/8/21 | 创建文件 |      |
 ;; |-------+---------+-----------+----------+------|
 ;;
 ;;; License:
@@ -29,13 +29,18 @@
 ;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 ;; Boston, MA 02110-1301, USA.
 
-(message "module-loaded test!")
+(message "module-cscope!")
 
-;; 加载 module-cscope
-(require 'module-cscope)
+;; 加载 xcscope.el 启用 cscope
+(require 'xcscope)
 
-;; 加载 module-ido
-(require 'module-ido)
+;; 可以选择在打开c/c++文件时才加载xcscope
+; (add-hook 'c-mode-common-hook
+;	  '(lambda ()
+;	     (require 'xcscope)))
 
-(provide 'module-loaded)
-;; module-loaded end!
+;; 使能 cscope不自动更新索引数据库
+(setq cscope-do-not-update-datebase t)
+
+
+(provide 'module-cscope)
